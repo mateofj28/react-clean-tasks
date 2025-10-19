@@ -1,0 +1,17 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .loading {
+    text-align: center;
+    color: #6b7280;
+  }
+  
+  .empty {
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+  }
+  
