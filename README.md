@@ -1,17 +1,17 @@
-# React Clean Tasks
+# 🧹 React Clean Tasks
 
 Proyecto de ejemplo para gestionar tareas en React siguiendo buenas prácticas.
 
 ---
 
-## Requisitos
+## 📋 Requisitos
 
 - Node.js 20.19+  
 - npm (v8+ recomendado)
 
 ---
 
-## Instalación
+## ⚙️ Instalación
 
 1. Clona el repositorio:
 
@@ -33,7 +33,7 @@ npm install
 
 ---
 
-## Ejecutar en modo desarrollo
+## 💻 Ejecutar en modo desarrollo
 
 ```bash
 npm start
@@ -43,7 +43,7 @@ Esto abrirá el proyecto en tu navegador en [http://localhost:3000](http://local
 
 ---
 
-## Comandos útiles
+## 🛠️ Comandos útiles
 
 * Ejecutar pruebas:
 
