@@ -1,84 +1,61 @@
-Perfecto 💪 aquí tienes el **README.md** completo y listo para copiar y pegar directamente en tu proyecto 👇
+# React Clean Tasks
+
+Proyecto de ejemplo para gestionar tareas en React siguiendo buenas prácticas.
 
 ---
 
-```markdown
-# 📝 React Clean Tasks — Aplicación CRUD de Tareas con Arquitectura Limpia
+## Requisitos
 
-Este proyecto es una aplicación **CRUD de tareas** construida con **React 19**, **Zustand** para el manejo de estado y una **arquitectura limpia** inspirada en principios de **Clean Architecture**.  
-Incluye una interfaz moderna, fluida y con transiciones suaves, sin depender de Tailwind CSS.
-
----
-
-## 🚀 Características principales
-
-✅ Arquitectura modular y escalable.  
-✅ Manejo de estado global con **Zustand**.  
-✅ Separación por capas: **core**, **data**, **state**, **ui**.  
-✅ CRUD completo (Crear, Leer, Actualizar, Eliminar).  
-✅ Animaciones suaves y diseño moderno.  
-✅ Código 100% limpio y comentado.
+- Node.js 20.19+  
+- npm (v8+ recomendado)
 
 ---
 
-## 📁 Estructura del proyecto
+## Instalación
 
-```
-
-react-clean-tasks/
-│
-├── src/
-│   ├── core/
-│   │   ├── entities/
-│   │   │   └── Task.js
-│   │   ├── repositories/
-│   │   │   └── TaskRepository.js
-│   │   └── usecases/
-│   │       ├── GetTasksUseCase.js
-│   │       ├── CreateTaskUseCase.js
-│   │       ├── ToggleTaskUseCase.js
-│   │       └── DeleteTaskUseCase.js
-│   │
-│   ├── data/
-│   │   └── api/
-│   │       └── apiClient.js
-│   │
-│   ├── state/
-│   │   └── useTaskStore.js
-│   │
-│   ├── ui/
-│   │   ├── components/
-│   │   │   ├── TaskForm.jsx
-│   │   │   ├── TaskItem.jsx
-│   │   │   └── TaskList.jsx
-│   │   └── pages/
-│   │       └── TaskPage.jsx
-│   │
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-│
-├── package.json
-└── vite.config.js
-
-````
-
----
-
-## ⚙️ Instalación
-
-Asegúrate de tener **Node.js 20.19+** instalado.
+1. Clona el repositorio:
 
 ```bash
-# Clona el repositorio
 git clone https://github.com/tuusuario/react-clean-tasks.git
-
-# Entra al proyecto
-cd react-clean-tasks
-
-# Instala dependencias
-npm install
 ````
+
+2. Entra al proyecto:
+
+```bash
+cd react-clean-tasks
+```
+
+3. Instala las dependencias:
+
+```bash
+npm install
+```
+
+---
+
+## Ejecutar en modo desarrollo
+
+```bash
+npm start
+```
+
+Esto abrirá el proyecto en tu navegador en [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Comandos útiles
+
+* Ejecutar pruebas:
+
+```bash
+npm test
+```
+
+* Construir para producción:
+
+```bash
+npm run build
+```
 
 ---
 
