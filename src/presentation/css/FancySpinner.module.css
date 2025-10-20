@@ -1,0 +1,261 @@
+/* .orb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00d4ff 0%, #0062ff 100%);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+} */
+
+/* .orb {
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, #00f2ff, #0077ff);
+    border-radius: 4px;
+    animation: lightning 1s linear infinite;
+}
+
+@keyframes lightning {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 120px 0;
+    }
+} */
+
+/* .orbit {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top-color: #00d4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  } */
+
+/* .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #00c2ff;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+} */
+
+/* .galaxy {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.galaxy::before,
+.galaxy::after {
+    content: '';
+    position: absolute;
+    border: 3px solid transparent;
+    border-top-color: #00d4ff;
+    border-radius: 50%;
+}
+
+.galaxy::before {
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+
+.galaxy::after {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
+    animation: spinReverse 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    to {
+        transform: rotate(-360deg);
+    }
+} */
+
+/* .wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.bar {
+    width: 6px;
+    height: 20px;
+    background: #00c2ff;
+    border-radius: 3px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 20px;
+    }
+
+    50% {
+        height: 40px;
+    }
+} */
+
+/* .neonRing {
+    width: 60px;
+    height: 60px;
+    border: 4px solid transparent;
+    border-top-color: #00e0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e0ff;
+    animation: spin 1.2s linear infinite;
+  }
+  
+  @keyframes spin { to { transform: rotate(360deg); } }
+  
+   */
+
+/* .wrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    animation: androidRotate 1.4s linear infinite;
+}
+
+.path {
+    stroke: #0a84ff;
+    stroke-linecap: round;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 0;
+    animation: androidDash 1.2s ease-in-out infinite;
+}
+
+@keyframes androidRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes androidDash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: -125;
+    }
+} */
+
+.eq {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 28px;
+}
+
+.bar {
+    width: 6px;
+    background: linear-gradient(180deg, #1db954, #1ed760);
+    border-radius: 3px;
+    height: 8px;
+    animation: eqGrow 0.9s ease-in-out infinite;
+}
+
+@keyframes eqGrow {
+    0% {
+        height: 6px;
+        opacity: 0.6;
+        transform: scaleY(0.6);
+    }
+
+    50% {
+        height: 28px;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    100% {
+        height: 10px;
+        opacity: 0.7;
+        transform: scaleY(0.7);
+    }
+}
