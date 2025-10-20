@@ -11,6 +11,7 @@ import { GetTasksUseCase } from "../core/usecases/GetTasksUseCase";
 // Esto pertenece a la capa de datos, y actúa como intermediario entre el dominio y la API.
 import { TaskRepository } from "../core/repositories/TaskRepository";
 
+import { toast } from "react-toastify";
 
 // Creamos un "store" (almacén de estado) usando Zustand.
 // Este store manejará toda la lógica y el estado global relacionado con las tareas.
@@ -24,7 +25,6 @@ export const useTaskStore = create((set, get) => ({
 
   // Indicador de carga (true mientras se están obteniendo las tareas desde la API).
   loading: false,
-
 
   // --- ACCIONES / MÉTODOS DEL STORE ---
 
@@ -49,7 +49,7 @@ export const useTaskStore = create((set, get) => ({
       title,          // título recibido como parámetro
       completed: false // nueva tarea siempre comienza sin completar
     });
-
+    toast.success("¡Tarea creada correctamente! 🎉");
     // Actualizamos el estado agregando la nueva tarea al arreglo existente.
     // 'get().tasks' obtiene la lista actual de tareas.
     // Usamos el operador spread (...) para mantener las tareas previas.
@@ -59,18 +59,28 @@ export const useTaskStore = create((set, get) => ({
 
   // ✅ 3. Alternar el estado "completado" de una tarea (UPDATE)
   toggleTask: async (task) => {
-    // Creamos una copia de la tarea con el valor de 'completed' invertido.
-    // Luego enviamos la actualización a la API mediante el repositorio.
-    const updated = await TaskRepository.update(task.id, {
-      ...task,
-      completed: !task.completed
-    });
-
-    // Reemplazamos en el estado local la tarea modificada por su nueva versión.
-    // Si el id coincide, reemplaza por 'updated'; si no, deja la tarea como estaba.
-    set({
-      tasks: get().tasks.map(t => t.id === task.id ? updated : t)
-    });
+    try {
+      // Creamos la copia de la tarea con 'completed' invertido
+      const taskToUpdate = {
+        ...task,
+        completed: !task.completed
+      };
+  
+      // Mostramos en consola qué vamos a enviar al backend
+      console.log("Enviando al backend:", taskToUpdate);
+  
+      // Llamada al backend
+      const updated = await TaskRepository.update(task.id, taskToUpdate);
+  
+      // Actualizamos el estado local
+      set({
+        tasks: get().tasks.map(t => t.id === task.id ? updated : t)
+      });      
+    } catch (error) {
+      console.error("Error al actualizar la tarea:", error);
+      // Aquí podrías mostrar un mensaje amigable al usuario
+      toast.error("¡Ups! No se pudo actualizar la tarea 😢");
+    }
   },
 
 

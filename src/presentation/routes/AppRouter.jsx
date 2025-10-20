@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { TaskPage } from "../pages/TaskPage";
+import { BrowserRouter } from "react-router-dom";
+import MainContent from "../components/MainContent";
+import Sidebar from "../components/Sidebar";
 
 export function AppRouter() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TaskPage />} />
-      </Routes>
+      <Sidebar />
+      <MainContent />
     </BrowserRouter>
   );
 }

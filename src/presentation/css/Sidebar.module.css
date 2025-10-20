@@ -1,0 +1,146 @@
+/* Sidebar base */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+}
+
+.expanded {
+  width: 200px;
+}
+
+/* Menu items */
+.menuItem {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menuItem:hover {
+  background-color: #374151;
+  transform: scale(1.05);
+}
+
+.menuItem:hover .icon {
+  color: #ffffff; /* icono blanco al pasar el mouse */
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #d1d5db; /* gris claro */
+  transition: color 0.3s ease;
+}
+
+.label {
+  margin-left: 15px;
+  color: #f9fafb;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expanded .label {
+  opacity: 1;
+}
+
+/* Tooltip animado */
+.tooltip {
+  color: #f9fafb;
+  position: absolute;
+  left: 70px;
+  background: #111827;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.menuItem:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Indicador activo animado */
+.activeIndicator {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #3b82f6;
+  border-radius: 0 4px 4px 0;
+  transition: top 0.3s ease, height 0.3s ease;
+}
+
+.active {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.active .icon {
+  color: #3b82f6; /* azul profesional para activo */
+}
+
+/* Botón hamburguesa */
+.mobileButton {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 110;
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Drawer móvil */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -200px;
+    width: 200px;
+    transition: left 0.4s ease;
+  }
+
+  .mobileOpen {
+    left: 0;
+  }
+
+  .mainContent {
+    margin-left: 0;
+    transition: margin-left 0.4s ease;
+  }
+
+  .drawerOpen {
+    margin-left: 200px;
+  }
+}
+
+/* Contenido principal */
+.mainContent {
+  margin-left: 60px;
+  padding: 20px;
+  transition: margin-left 0.4s ease;
+}
+
+.shifted {
+  margin-left: 200px;
+}

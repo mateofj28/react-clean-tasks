@@ -1,0 +1,30 @@
+.mainContent {
+  padding: 20px;
+  transition: padding-left 0.4s ease, margin-left 0.4s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.expanded {
+  padding-left: 220px;
+}
+
+.collapsed {
+  padding-left: 80px;
+}
+
+/* 🔥 Ajuste automático en móviles */
+@media (max-width: 768px) {
+  .expanded,
+  .collapsed {
+    padding-left: 25px !important;
+  }
+}
+
+.drawerOpen {
+  margin-left: 200px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

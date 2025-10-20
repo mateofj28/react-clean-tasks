@@ -1,0 +1,130 @@
+.dashboardContainer {    
+    
+    padding-top: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.dashboardTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.dashboardSubtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.statsContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.statCard {
+    flex: 1;
+    min-width: 260px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: #e5e7eb;
+    border-radius: 8px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #22c55e;
+    transition: width 1s ease-in-out;
+}
+
+.weeklyChart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 80px;
+    margin: 10px 0;
+}
+
+.bar {
+    width: 10%;
+    background-color: #60a5fa;
+    border-radius: 4px;
+    transition: height 0.5s ease;
+}
+
+.circleProgress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.circularChart {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.circleBg {
+    fill: none;
+    stroke: #e5e7eb;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 3.8;
+    stroke: #22c55e;
+    stroke-linecap: round;
+    animation: progress 1.5s ease-out forwards;
+}
+
+.circleLabel {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #1e293b;
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
