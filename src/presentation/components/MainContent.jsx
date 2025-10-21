@@ -5,6 +5,7 @@ import Setting from "../pages/SettingPage";
 import TasksPage from "../pages/TaskPage";
 import styles from "../css/MainContent.module.css";
 import { useUIStore } from "../../state/useUIStore";
+import Home from "../pages/HomePage";
 
 export default function MainContent() {
   const location = useLocation();
@@ -15,6 +16,7 @@ export default function MainContent() {
       case "/": return Dashboard;
       case "/tareas": return TasksPage;
       case "/perfil": return Profile;
+      case "/home": return Home;
       case "/configuracion": return Setting;
       default: return () => <div>Página no encontrada</div>;
     }

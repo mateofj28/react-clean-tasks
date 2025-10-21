@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "../css/Sidebar.module.css";
-import { FaHome, FaTasks, FaUser, FaCog, FaBars, FaTimes } from "react-icons/fa";
+import { FaHome, FaTasks, FaUser, FaCog, FaBars, FaTimes, FaHouseUser } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { useUIStore } from "../../state/useUIStore";
 
@@ -9,6 +9,7 @@ const menuItems = [
   { icon: <FaTasks />, label: "Tareas", path: "/tareas" },
   { icon: <FaUser />, label: "Perfil", path: "/perfil" },
   { icon: <FaCog />, label: "Configuración", path: "/configuracion" },
+  { icon: <FaHouseUser />, label: "Home", path: "/home" },
 ];
 
 export default function Sidebar() {
