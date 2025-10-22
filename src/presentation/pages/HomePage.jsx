@@ -9,9 +9,15 @@ import {
   FaComments
 } from 'react-icons/fa';
 import InfoCard from '../components/InfoCard';
+import Modal from '../components/Modal';
+import ModalContent from '../components/ModalContent';
+import { useModalStore } from '../../state/useModalStore';
 
 
 export default function Home() {
+
+  const { isOpen, modalData, openModal, closeModal } = useModalStore();
+
   return (
     <div style={{
       display: 'grid',
@@ -25,6 +31,20 @@ export default function Home() {
       padding: '10px',
     }}>
 
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        {console.log("Modal data:", modalData)}
+        {modalData ? (
+          <ModalContent
+            title={modalData.title}
+            description={modalData.description}
+            icon={modalData.icon}
+            headerColor={modalData.headerColor}
+            iconBg={modalData.iconBg}
+            onContinue={closeModal}
+          />
+        ) : null}
+      </Modal>
+
       <InfoCard
         dayLabel="DAY 1"
         title="Chat GPT"
@@ -33,7 +53,14 @@ export default function Home() {
         buttonText="Realizar prueba"
         headerColor="#00C853"
         iconBg="#B3E5FC"
-        onButtonClick={() => alert('Probando ChatGPT!')}
+        onButtonClick={() => openModal({
+          title: "Chat GPT",
+          description:
+            "ChatGPT te ayuda a desarrollar ideas, escribir código y optimizar tus proyectos de forma inteligente.",
+          icon: FaLock,
+          headerColor: "#00C853",
+          iconBg: "#B3E5FC",
+        })}
       />
 
       <InfoCard
@@ -44,7 +71,14 @@ export default function Home() {
         buttonText="Probar ahora"
         headerColor="#2196F3"
         iconBg="#E1F5FE"
-        onButtonClick={() => alert('Probando AI Builder!')}
+        onButtonClick={() => openModal({
+          title: "AI Builder",
+          description:
+            "Construye asistentes de inteligencia artificial personalizados y automatiza tareas en segundos.",
+          icon: FaRobot,
+          headerColor: "#2196F3",
+          iconBg: "#E1F5FE",
+        })}
       />
 
       <InfoCard
