@@ -1,6 +1,6 @@
 # 🧹 React Clean Tasks
 
-Proyecto de ejemplo para gestionar tareas en React siguiendo buenas prácticas.
+proyecto base con tareas, navegación adaptable, gráficos, tarjetas y modales en React siguiendo buenas prácticas.
 
 ---
 
